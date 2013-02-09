@@ -53,7 +53,7 @@
         $.getJSON("https://api.tumblr.com/v2/blog/" + url + "/posts", { api_key: api_key, limit: limit, offset: offset }, function(json) {
 
             json.response.posts.forEach(function(val, index, array) {
-                if ( ! val["photos"] ) {
+                if ( ! val.photos ) {
                     return 1;
                 }
                 var j    = 0;
