@@ -54,6 +54,8 @@ tumblrTile || (function() {
             $("#container").masonry({
                 itemSelector: ".item",
                 columnWidth: self.config.baseWidth + self.config.margin,
+                isFitWidth: true,
+                isAnimated: true
             });
         }).then(function() {
             $(window).scroll(function() {
