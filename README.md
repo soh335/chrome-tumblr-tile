@@ -9,5 +9,5 @@ http://soh335.hatenablog.com/entry/2013/02/10/011039
 * click import not pacakged extension and select directory. 
 * access http://www.tumblr.com/oauth/apps , and register application.
 * access chrome-tumblr-tile option page, and input tumblr api key. 
-    * also you can change hostname, basewidth and column in this page.
+    * also you can change hostname, basewidth and margin in this page.
 * access empty tab page.
