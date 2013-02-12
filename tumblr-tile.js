@@ -22,7 +22,7 @@ tumblrTile || (function() {
         var defaultConfig = {
             hostname : "aoi-miyazaki.tumblr.com",
             baseWidth: 250,
-            margin   : 10
+            column   : 5
         };
 
         this.config = $.extend(defaultConfig, config);
@@ -53,9 +53,9 @@ tumblrTile || (function() {
 
             $("#container").masonry({
                 itemSelector: ".item",
-                columnWidth: self.config.baseWidth + self.config.margin,
-                isFitWidth: true,
-                isAnimated: true
+                columnWidth : function( containerWidth ) {
+                    return containerWidth / self.config.column;
+                },
             });
         }).then(function() {
             $(window).scroll(function() {
@@ -115,7 +115,7 @@ tumblrTile || (function() {
                     });
 
                     var altSize = val.photos[0].alt_sizes[diffSizes[0].index]
-                    var div = '<div class="item"><img src="' + altSize.url+ '" width="' + altSize.width + '" height="' + altSize.height + '" /></div>';
+                    var div = '<div class="item"><a href="' + val.post_url + '"><img src="' + altSize.url+ '" width="' + altSize.width + '" height="' + altSize.height + '" /></a></div>';
                     func(div);
                 });
 
