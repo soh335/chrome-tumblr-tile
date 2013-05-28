@@ -6,7 +6,8 @@
         "newtab": "newTab.html"
     },
     "permissions": [
-        "https://api.tumblr.com/"
+        "https://api.tumblr.com/",
+		"tabs"
     ],
     "options_page": "options.html",
     "manifest_version": 2,
