@@ -22,7 +22,7 @@ tumblrTile || (function() {
         var defaultConfig = {
             hostname : "aoi-miyazaki.tumblr.com",
             baseWidth: 250,
-            margin   : 10
+            column   : 5
         };
 
         this.config = $.extend(defaultConfig, config);
@@ -53,9 +53,9 @@ tumblrTile || (function() {
 
             $("#container").masonry({
                 itemSelector: ".item",
-                columnWidth: self.config.baseWidth + self.config.margin,
-                isFitWidth: true,
-                isAnimated: true
+                columnWidth : function( containerWidth ) {
+                    return containerWidth / self.config.column;
+                },
             });
         }).then(function() {
             $(window).scroll(function() {
